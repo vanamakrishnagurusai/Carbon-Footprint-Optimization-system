@@ -319,7 +319,23 @@ Compares **7 regression models** side-by-side and automatically selects the best
 
 **Target variable:** `energy` (kWh)
 
+**Dataset:** 2,000 rows × 8 columns — Train/Test split: 80/20
+
 **Evaluation metrics:** MAE, RMSE, R²
+
+#### Model Comparison Results
+
+| Rank | Model               | MAE       | RMSE      | R² Score  |
+|------|---------------------|-----------|-----------|-----------|
+| 🥇 1 | **Gradient Boosting** | 0.001522  | 0.003377  | **0.9971** |
+| 🥈 2 | Random Forest        | 0.001820  | 0.004480  | 0.9949    |
+| 🥉 3 | Decision Tree        | 0.003289  | 0.008010  | 0.9837    |
+| 4    | XGBoost              | 0.004211  | 0.009673  | 0.9762    |
+| 5    | KNN (k=5)            | 0.010283  | 0.018257  | 0.9151    |
+| 6    | Linear Regression    | 0.019523  | 0.031550  | 0.7466    |
+| 7    | SVR (RBF)            | 0.076000  | 0.079095  | -0.5927   |
+
+> 🏆 **Best model: Gradient Boosting** — R² = 0.9971, RMSE = 0.003377, MAE = 0.001522
 
 **Saved artifacts:**
 - `models/model.pkl` — Best trained model
@@ -339,6 +355,14 @@ Groups IoT readings into **3 usage-efficiency clusters** using K-Means:
 | 🔴 `high usage` | High energy, long duration, peak hours   |
 
 **Clustering features:** `energy`, `duration`, `hour`
+
+#### Cluster Distribution Results
+
+| Cluster      | Count | Avg Energy (kWh) | Avg Duration (h) |
+|--------------|-------|-------------------|-------------------|
+| 🟢 Efficient  | 863   | 0.02              | 1.66              |
+| 🟡 Moderate   | 999   | 0.02              | 4.23              |
+| 🔴 High Usage  | 138   | 0.21              | 5.87              |
 
 **Saved artifact:**
 - `models/kmeans.pkl` — Bundle containing K-Means model, scaler, label map, and feature list
