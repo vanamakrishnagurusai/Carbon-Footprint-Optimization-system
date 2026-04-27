@@ -30,8 +30,7 @@ models/*.pkl
 # ──────────────────────────────────────────────
 #  Data (large datasets — keep tracked via DVC or download separately)
 # ──────────────────────────────────────────────
-data/*.csv
-data/*.xlsx
+
 
 # ──────────────────────────────────────────────
 #  IDE / Editor
