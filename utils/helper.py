@@ -2,6 +2,8 @@
 #  Carbon Footprint Optimization — Utility Helpers
 # ────────────────────────────────────────────────────────────
 
+from typing import Optional, List
+
 # Average CO₂ emission factor (kg CO₂ per kWh)
 EMISSION_FACTOR = 0.82
 
@@ -21,10 +23,11 @@ def calculate_co2(energy_kwh: float) -> float:
 def get_optimization_suggestions(
     duration: float,
     hour: int,
-    energy: float | None = None,
-) -> list[str]:
+    energy: Optional[float] = None,
+) -> List[str]:
     """Return a list of actionable optimisation suggestions."""
-    suggestions: list[str] = []
+
+    suggestions: List[str] = []
 
     if duration > HIGH_DURATION_THRESHOLD:
         suggestions.append(
