@@ -22,10 +22,6 @@ build/
 *.egg-info/
 *.egg
 
-# ──────────────────────────────────────────────
-#  Trained Models (large binary files)
-# ──────────────────────────────────────────────
-models/*.pkl
 
 # ──────────────────────────────────────────────
 #  Data (large datasets — keep tracked via DVC or download separately)
